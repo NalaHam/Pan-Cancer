@@ -1,0 +1,21 @@
+
+f_mut <- filter(mut_count, mut_count$gender == "female")
+m_mut <- filter(mut_count, mut_count$gender == "male")
+
+sum(is.na(mut_count$Silent)) #1256
+
+sum(is.na(f_mut$Silent)) #682
+
+sum(is.na(m_mut$Silent)) #499
+
+sum(is.na(mut_count$Silent), is.na (mut_count$gender)) #1404
+
+sum(is.na (mut_count$gender)) #148
+
+1404-148
+
+new_pan_cancer <- pan_cancer[!is.na(pan_cancer$Variant_Classification), ] #remove NA mutations from pan_cancer
+
+unique(new_pan_cancer$Variant_Classification)
+
+sum(is.na(mut_count$Silent)) #0
